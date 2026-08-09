@@ -41,7 +41,7 @@ Reads calibration measurements from the Picarro and CraNOx reference instruments
 Aligns measurements from different instruments in time before comparison and calibration.
 
 `fit_linear_calibration.m`  
-Fits a linear calibration between the sensor signal and reference-instrument measurements and calculates R2, RMSE and MAE.
+Fits a linear calibration between the sensor signal and reference-instrument measurements and calculates R2 and RMSE.
 
 `apply_linear_calibration.m`  
 Applies the fitted calibration coefficients to sensor measurements.

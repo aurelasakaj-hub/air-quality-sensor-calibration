@@ -1,104 +1,21 @@
-# Air Quality Sensor Calibration
+# Selected Figures
 
-MATLAB analysis of electrochemical sensors for airborne measurements of CO, NO, NO2 and O3.
+Figures from the MSc thesis analysis of electrochemical air-quality sensors.
 
-This repository contains code from my MSc thesis at the Institute for Geophysics and Meteorology, University of Cologne.
+## CO calibration
 
-The work focused on calibrating low-cost electrochemical gas sensors against reference instruments and applying the calibration to measurements collected during an airborne field campaign in Germany.
+![CO calibration](CO_calibration.png)
 
-## Analysis
+Comparison of calibrated CO sensor measurements with the Picarro reference instrument. The figure also includes the corresponding linear regression results. A temporary sensor response is visible during sudden changes in humidity before the measurements stabilize again.
 
-The sensors measured:
+## NO field measurements
 
-- CO
-- NO
-- NO2
-- O3
+![NO field measurements](NO_field_timeseries.png)
 
-Laboratory measurements from Picarro and CraNOx instruments were used as references for the calibration.
+NO concentrations measured by the six sensor setups during the Zeppelin field campaign. The figure shows differences between the setups and the variability observed during the flight period. Setups 1 and 4 showed more noise than the other setups.
 
-The calibrated sensors were then used to analyse high-frequency measurements collected during Zeppelin flights. The analysis included sensor correction, time-series processing, regression, correlation, mean and standard deviation, percentiles, and comparison between the different sensor setups.
+## NO regression
 
-Temperature and humidity were also considered because of their influence on the sensor response.
+![NO regression](NO_regression.png)
 
-## Selected Results
-
-### CO sensor calibration
-
-Comparison of calibrated CO sensor measurements with the Picarro reference instrument.
-
-![CO sensor calibration](figures/CO_calibration.png)
-
-### Airborne NO measurements
-
-NO measurements from the six sensor setups during the Zeppelin field campaign, showing the original and calibrated data.
-
-![NO field measurements](figures/NO_field_timeseries.png)
-
-### Comparison between sensor setups
-
-Linear regression of NO measurements between the different sensor setups.
-
-![NO regression](figures/NO_regression.png)
-
-## MATLAB code
-
-The `matlab` folder contains the scripts used in the analysis.
-
-`Read_bin_data.m`  
-Reads the binary sensor data and extracts the measurement channels.
-
-`Datumstempel_erzeugen_N.m`  
-Prepares timestamps and variables for the six sensor setups.
-
-`Berechnung_PLOT_New_version.m`  
-Processes the sensor measurements together with temperature and humidity data.
-
-`Calibration.m`  
-Calibrates the electrochemical sensors against Picarro and CraNOx measurements.
-
-`CLB_data_2_field_data.m`  
-Applies the calibration coefficients to the field measurements.
-
-`Results.m`  
-Generates concentration time series and analysis results.
-
-`mean_sd_plot.m`  
-Calculates mean values and standard deviations.
-
-`Linear_Reg_Clb.m`  
-Performs regression analysis for the calibration measurements.
-
-`Linear_regression_Zeppelin.m`  
-Performs regression analysis for the Zeppelin measurements.
-
-`Linear_corr.m`  
-Compares measurements between sensor setups.
-
-`Quantile.m`  
-Calculates concentration percentiles.
-
-`Combo_chart.m`  
-Plots gas concentrations together with temperature and humidity.
-
-## Field data
-
-The field measurements were collected with six sensor setups mounted on a Zeppelin during an airborne measurement campaign in Germany.
-
-The sensors recorded data at approximately one-second resolution. One of the analysed days contained around 73,000 measurements.
-
-The original measurement data are not included in this repository.
-
-Some scripts therefore depend on input files and intermediate variables from the original thesis workflow.
-
-## Thesis
-
-**Characterization and Application of Electrochemical Sensors for Ambient, Airborne Measurements of CO, NO, NO2, and O3**
-
-MSc thesis  
-Institute for Geophysics and Meteorology  
-University of Cologne
-
-## Author
-
-Aurela Sakaj
+Linear regression comparing NO measurements between the different sensor setups. Setup 5 was used as the reference, and the data were averaged to one-minute intervals before the comparison.

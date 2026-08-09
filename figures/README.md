@@ -18,10 +18,4 @@ A transient response was observed following changes in humidity, after which the
 
 Setups 1 and 4 showed greater variability than the other setups, consistent with the increased noise observed during the analysis.
 
-## NO inter-sensor comparison
 
-![NO inter-sensor comparison](NO_regression.png)
-
-*Linear regression comparing NO measurements between the six sensor setups.*
-
-The measurements were averaged to one-minute intervals before comparison, with Setup 5 used as the reference.

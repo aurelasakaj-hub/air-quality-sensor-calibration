@@ -2,7 +2,7 @@
 
 MATLAB analysis of electrochemical sensors for airborne measurements of CO, NO, NO2 and O3.
 
-This repository contains code from my MSc thesis at the Institute for Geophysics and Meteorology, University of Cologne.
+This repository contains a cleaned and refactored version of the analysis workflow from my MSc thesis at the Institute for Geophysics and Meteorology, University of Cologne.
 
 The work focused on calibrating low-cost electrochemical gas sensors against reference instruments and applying the calibration to measurements collected during an airborne field campaign in Germany.
 
@@ -23,43 +23,33 @@ Temperature and humidity were also considered because of their influence on the 
 
 ## MATLAB code
 
-The `matlab` folder contains the scripts used in the analysis.
+The `matlab` folder contains the main data-processing and calibration functions used in the analysis workflow.
 
-`Read_bin_data.m`  
-Reads the binary sensor data and extracts the measurement channels.
+`read_binary_sensor_data.m`  
+Reads the binary sensor files and extracts timestamps, gas-sensor channels and environmental measurements.
 
-`Datumstempel_erzeugen_N.m`  
-Prepares timestamps and variables for the six sensor setups.
+`adc_counts_to_voltage.m`  
+Converts raw ADC counts from the sensor board to voltage.
 
-`Berechnung_PLOT_New_version.m`  
-Processes the sensor measurements together with temperature and humidity data.
+`decode_temperature_humidity.m`  
+Converts the raw temperature and humidity measurements to temperature in degrees Celsius and relative humidity.
 
-`Calibration.m`  
-Calibrates the electrochemical sensors against Picarro and CraNOx measurements.
+`read_reference_measurements.m`  
+Reads calibration measurements from the Picarro and CraNOx reference instruments.
 
-`CLB_data_2_field_data.m`  
-Applies the calibration coefficients to the field measurements.
+`align_time_series.m`  
+Aligns measurements from different instruments in time before comparison and calibration.
 
-`Results.m`  
-Generates concentration time series and analysis results.
+`fit_linear_calibration.m`  
+Fits a linear calibration between the sensor signal and reference-instrument measurements and calculates R2, RMSE and MAE.
 
-`mean_sd_plot.m`  
-Calculates mean values and standard deviations.
+`apply_linear_calibration.m`  
+Applies the fitted calibration coefficients to sensor measurements.
 
-`Linear_Reg_Clb.m`  
-Performs regression analysis for the calibration measurements.
+`minute_statistics.m`  
+Aggregates high-frequency measurements and calculates one-minute means and standard deviations.
 
-`Linear_regression_Zeppelin.m`  
-Performs regression analysis for the Zeppelin measurements.
-
-`Linear_corr.m`  
-Compares measurements between sensor setups.
-
-`Quantile.m`  
-Calculates concentration percentiles.
-
-`Combo_chart.m`  
-Plots gas concentrations together with temperature and humidity.
+The code has been reorganized from the original thesis workflow to make the main processing and calibration steps easier to follow.
 
 ## Field data
 
@@ -69,7 +59,7 @@ The sensors recorded data at approximately one-second resolution. One of the ana
 
 The original measurement data are not included in this repository.
 
-Some scripts therefore depend on input files and intermediate variables from the original thesis workflow.
+The MATLAB functions therefore document the main processing and calibration workflow rather than reproduce the complete field campaign analysis.
 
 ## Thesis
 

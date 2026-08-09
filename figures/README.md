@@ -1,21 +1,27 @@
-# Selected Figures
+# Figures
 
-Figures from the MSc thesis analysis of electrochemical air-quality sensors.
+Selected results from the MSc thesis analysis of electrochemical sensors for airborne air-quality measurements.
 
-## CO calibration
+## CO sensor calibration
 
-![CO calibration](CO_calibration.png)
+![CO sensor calibration](CO_calibration.png)
 
-Comparison of calibrated CO sensor measurements with the Picarro reference instrument. The figure also includes the corresponding linear regression results. A temporary sensor response is visible during sudden changes in humidity before the measurements stabilize again.
+*CO-B4 sensor calibration against Picarro reference measurements, with corresponding linear regression results.*
 
-## NO field measurements
+The calibration also showed a transient response to changes in humidity before the sensor measurements stabilized. :contentReference[oaicite:0]{index=0}
+
+## NO concentration time series
 
 ![NO field measurements](NO_field_timeseries.png)
 
-NO concentrations measured by the six sensor setups during the Zeppelin field campaign. The figure shows differences between the setups and the variability observed during the flight period. Setups 1 and 4 showed more noise than the other setups.
+*Twenty-four-hour NO concentration measurements from the six sensor setups during the Zeppelin field campaign.*
 
-## NO regression
+Setups 1 and 4 showed greater variability than the other setups, consistent with the noise identified during the analysis. :contentReference[oaicite:1]{index=1}
+
+## NO inter-sensor comparison
 
 ![NO regression](NO_regression.png)
 
-Linear regression comparing NO measurements between the different sensor setups. Setup 5 was used as the reference, and the data were averaged to one-minute intervals before the comparison.
+*Linear regression of NO measurements between sensor setups.*
+
+Setup 5 was used as the reference, and measurements were averaged to one-minute intervals before the regression analysis. :contentReference[oaicite:2]{index=2}
